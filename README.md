@@ -21,7 +21,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-This App is designed to run on the Database Server, e.g. with PM2 on a windows machine. Please don't forget to create your own pair of SSL-Secrets and passing
+This App is designed to run on the Database Server, e.g. with PM2 on a windows machine. Please don't forget to create your own pair of SSL-Secrets
 
 ## Support
 
