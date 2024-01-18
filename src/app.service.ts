@@ -68,9 +68,13 @@ export class AppService {
                   console.log(err);
                   reject(err);
                 }
-
-                response.recordset = [...result.recordset];
-                response.rowsAffected = result.rowsAffected[0];
+                if (result.rowsAffected == 0) {
+                  response.recordset = [];
+                  response.rowsAffected = 0;
+                } else {
+                  response.recordset = [...result?.recordset];
+                  response.rowsAffected = result?.rowsAffected[0];
+                }
 
                 // release the connection after queries are executed
                 ps.unprepare((err) => {

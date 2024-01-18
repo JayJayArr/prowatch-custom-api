@@ -25,4 +25,21 @@ describe('AppController (e2e)', () => {
         'This API returns DATA from Honeywell BRNO, any use other than the intended use is not allowed'
       );
   });
+
+  it('/POST', () => {
+    const authheader =
+      'Basic ' +
+      btoa(process.env.HTTP_BASIC_USER + ':' + process.env.HTTP_BASIC_PASS);
+    return request(app.getHttpServer())
+      .post('/')
+      .set('Authorization', authheader)
+      .send({
+        endtime: '2022-12-19 07:01:00.000',
+        starttime: '2020-12-19 07:00:00.000'
+      })
+      .expect(201)
+      .then(({ body }) => {
+        expect(body).toBeDefined();
+      });
+  });
 });
