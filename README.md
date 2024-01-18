@@ -5,7 +5,7 @@ A custom API to be used with Honeywell ProWatch and a custom SQL query, an examp
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Running the app
